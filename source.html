@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mi página </title>
+<style type="text/css">
+.grande { font-size: 60px; }
+</style>
+<script>
+// Escribir aqui el código Javascript
+</script>
+</head>
+<body>
+<!-- Inicio del código -->
+
+<p class="grande">¡Mi primera página!</p>
+
+<!-- Fin del código -->
+
+
+
+
+    <meta charset="UTF-8">
+    <title>Mi Primera Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .tarjeta-rosa {
+            width: 300px;
+            height: 180px;
+            background-color: #ffc0cb;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .logo-guanajuato {
+            width: 100px;
+            margin-top: 10px;
+        }
+    </style>
+
+
+    <h1>¡Bienvenido a Mi Página!</h1>
+    <div class="tarjeta-rosa">
+        <p>Premio Tarjeta Rosa: $1000 pesos</p>
+    </div>
+    <img class="logo-guanajuato" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Coat_of_arms_of_Guanajuato.svg/512px-Coat_of_arms_of_Guanajuato.svg.png" alt="Logo de Guanajuato">
+    <p>Presiona el botón para comenzar a grabar:</p>
+    <button id="startButton">Grabar Video</button>
+    <video id="videoPreview" autoplay=""></video>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const videoPreview = document.getElementById('videoPreview');
+
+        startButton.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                videoPreview.srcObject = stream;
+            } catch (error) {
+                console.error('Error al acceder a la cámara y micrófono:', error);
+            }
+        });
+    </script>
+
+
+</body></html>
